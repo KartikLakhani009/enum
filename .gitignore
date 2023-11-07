@@ -1,0 +1,4 @@
+# rust
+rust_enum/target
+rust_enum/Cargo.lock
+*.lock
