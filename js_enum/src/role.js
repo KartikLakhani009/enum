@@ -4,5 +4,6 @@ const ROLES = {
   STAFF: 2,
   // DEVELOPER,
 };
+// there is rfc dicussion on enum in js
 
 module.exports = ROLES;
