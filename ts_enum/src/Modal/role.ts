@@ -37,6 +37,8 @@ mutatedArray("User")
 here you lose dot access like Role.Admin 
 */
 
+// Advanced way
+
 //what if i tell there is another strong way to use enum
 // 1. array uninon 
 // 2. string literal
