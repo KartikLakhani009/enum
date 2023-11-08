@@ -5,5 +5,6 @@ const ROLES = {
   // DEVELOPER,
 };
 // there is rfc dicussion on enum in js
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Future_reserved_keywords
 
 module.exports = ROLES;
