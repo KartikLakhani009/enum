@@ -14,6 +14,32 @@ var Role;
 
 //https://www.typescriptlang.org/play?#code/KYOwrgtgBASg9gG2FA3gKCpqBBAIgWQEkA5AGgywFUBlAURnIF80g
 
+/*
+export enum Role{
+    ADMIN="ADMIN",
+    USER="USER"
+}
+
+export var Role;
+(function (Role) {
+    Role["ADMIN"] = "ADMIN";
+    Role["USER"] = "USER";
+})(Role || (Role = {}));
+
+function getRole(role:Role){
+    switch (role) {
+        case Role.ADMIN:
+            console.log("ADMIN");
+            
+            return role
+    }
+}
+//event it's same we till get error
+getRole("ADMIN")
+
+// also same value with different enum name will not work
+*/
+
 // runtime cause and also unpreaditble syntax you get after compile
 
 // will not run it's cosider 0 so it's false case
@@ -22,7 +48,7 @@ var Role;
     
 // }
 
-//coming to part of uninon 
+//coming to part of uninon which is string literal
 
 /* @sc-ignore
 type role = "Admin" | "User"
@@ -35,13 +61,14 @@ function mutatedArray(item:"Admin"){
 
 mutatedArray("User")
 here you lose dot access like Role.Admin 
+also we don't iterate enum
 */
 
 // Advanced way
 
 //what if i tell there is another strong way to use enum
-// 1. array uninon 
-// 2. string literal
+// 1. array uninon Iterator
+// 2. Object uninon Iterator
 
 // 1. array uninon
 
@@ -77,7 +104,7 @@ getRole("Staff")
 
 */
 
-//  2. string literal
+//  2. Object uninon Iterator
 
 /* @sc-ignore
 const USER_ROLE={
