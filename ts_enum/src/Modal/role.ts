@@ -47,6 +47,18 @@ getRole("ADMIN")
 //     console.log("admin");
     
 // }
+// https://github.com/typescript-eslint/typescript-eslint/issues/561
+
+
+
+
+
+
+
+
+
+
+
 
 //coming to part of uninon which is string literal
 
@@ -60,9 +72,24 @@ function mutatedArray(item:"Admin"){
 }
 
 mutatedArray("User")
+
+// https://res.cloudinary.com/practicaldev/image/fetch/s--MHksN0vO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8bpwl2fg1agqlodxa9ez.jpg
+
 here you lose dot access like Role.Admin 
 also we don't iterate enum
+
+//https://www.google.com/imgres?imgurl=https%3A%2F%2Fcampedersen.com%2Fstatic%2Fdecision-fa765218f173a06140fcdb76d7e6e875.jpg&tbnid=pERyqT6B4jELXM&vet=12ahUKEwiTluOGo9WCAxWytCcCHfTSCkcQMygBegQIARBL..i&imgrefurl=https%3A%2F%2Fcampedersen.com%2Fenum-vs-string%2F&docid=feMwNVb7vRKnPM&w=500&h=756&itg=1&q=typescript%20enum%20memes&ved=2ahUKEwiTluOGo9WCAxWytCcCHfTSCkcQMygBegQIARBL
+
 */
+
+
+
+
+
+
+
+
+
 
 // Advanced way
 
@@ -72,7 +99,8 @@ also we don't iterate enum
 
 // 1. array uninon
 
-/* @sc-ignore
+/*
+//  @sc-ignore
 const UserRoles = ["Admin", "User","Staff"] as const;  // as const is Object.freeze but it's on nested level as well
 
 type UserRole = typeof UserRoles[number];
@@ -101,8 +129,9 @@ function getRole(role:UserRole){
 
 getRole(UserRoles[0]) 
 getRole("Staff")
-
+// getRole("developer")
 */
+
 
 //  2. Object uninon Iterator
 
@@ -112,6 +141,9 @@ const USER_ROLE={
     USER:1,
     STAFF:2,
 } as const 
+
+
+above thing we may use in javascript as well by this approach
 
 type TUserRole = typeof USER_ROLE[keyof typeof USER_ROLE];
 
