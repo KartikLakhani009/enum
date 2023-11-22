@@ -60,7 +60,7 @@ getRole("ADMIN")
 
 
 
-//coming to part of uninon which is string literal
+//coming to part of uninon way
 
 /* @sc-ignore
 type role = "Admin" | "User"
@@ -201,6 +201,7 @@ export const USER_ROLE={
 
 export type TUserRole = typeof USER_ROLE[keyof typeof USER_ROLE];
 
+// below code is in your file 
 const roleFunction:Record<TUserRole,() => void> ={
     [USER_ROLE.ADMIN]:()=>console.log("ADMIN func called"),
     [USER_ROLE.USER]:()=>console.log("USER func called"),
