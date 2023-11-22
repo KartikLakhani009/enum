@@ -173,3 +173,44 @@ getRole(USER_ROLE.ADMIN)
 getRole(0)
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 2. point of rust pattern mathing
+
+/*
+export const USER_ROLE={
+    ADMIN:0,
+    USER:1,
+    STAFF:2,
+} as const 
+
+export type TUserRole = typeof USER_ROLE[keyof typeof USER_ROLE];
+
+const roleFunction:Record<TUserRole,() => void> ={
+    [USER_ROLE.ADMIN]:()=>console.log("ADMIN func called"),
+    [USER_ROLE.USER]:()=>console.log("USER func called"),
+    [USER_ROLE.STAFF]:()=>console.log("STAFF func called"),
+    // 3:()=>console.log("3 func called"),
+}
+
+function getRole(role:TUserRole){
+   roleFunction[role]();
+}
+
+getRole(2)
+*/
