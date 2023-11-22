@@ -20,13 +20,14 @@ export enum Role{
     USER="USER"
 }
 
-export var Role;
-(function (Role) {
-    Role["ADMIN"] = "ADMIN";
-    Role["USER"] = "USER";
-})(Role || (Role = {}));
+// @sonarlint-disable-next-line
+// export var Role;
+// (function (Role) {
+//     Role["ADMIN"] = "ADMIN";
+//     Role["USER"] = "USER";
+// })(Role || (Role = {}));
 
-function getRole(role:Role){
+function printRole(role:Role){
     switch (role) {
         case Role.ADMIN:
             console.log("ADMIN");
@@ -35,7 +36,7 @@ function getRole(role:Role){
     }
 }
 //event it's same we till get error
-getRole("ADMIN")
+printRole("ADMIN")
 
 // also same value with different enum name will not work
 */
@@ -62,7 +63,8 @@ getRole("ADMIN")
 
 //coming to part of uninon way
 
-/* @sc-ignore
+/*
+// @sc-ignore
 type role = "Admin" | "User"
 
 const AdminArr:"Admin"[] = [];
@@ -75,8 +77,8 @@ mutatedArray("User")
 
 // https://res.cloudinary.com/practicaldev/image/fetch/s--MHksN0vO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8bpwl2fg1agqlodxa9ez.jpg
 
-here you lose dot access like Role.Admin 
-also we don't iterate enum
+// here you lose dot access like Role.Admin 
+// also we don't iterate enum
 
 //https://www.google.com/imgres?imgurl=https%3A%2F%2Fcampedersen.com%2Fstatic%2Fdecision-fa765218f173a06140fcdb76d7e6e875.jpg&tbnid=pERyqT6B4jELXM&vet=12ahUKEwiTluOGo9WCAxWytCcCHfTSCkcQMygBegQIARBL..i&imgrefurl=https%3A%2F%2Fcampedersen.com%2Fenum-vs-string%2F&docid=feMwNVb7vRKnPM&w=500&h=756&itg=1&q=typescript%20enum%20memes&ved=2ahUKEwiTluOGo9WCAxWytCcCHfTSCkcQMygBegQIARBL
 
@@ -93,7 +95,7 @@ also we don't iterate enum
 
 // Advanced way
 
-//what if i tell there is another strong way to use enum
+//what if i tell there is another better way to use enum
 // 1. array uninon Iterator
 // 2. Object uninon Iterator
 
@@ -105,7 +107,7 @@ const UserRoles = ["Admin", "User","Staff"] as const;  // as const is Object.fre
 
 type UserRole = typeof UserRoles[number];
 
-function getRole(role:UserRole){
+function printRole(role:UserRole){
     switch (role) {
         case UserRoles[0]:
             console.log("Admin");
@@ -127,9 +129,9 @@ function getRole(role:UserRole){
     }
 }
 
-getRole(UserRoles[0]) 
-getRole("Staff")
-// getRole("developer")
+printRole(UserRoles[0]) 
+printRole("Staff")
+// printRole("developer")
 */
 
 
@@ -147,7 +149,7 @@ above thing we may use in javascript as well by this approach
 
 type TUserRole = typeof USER_ROLE[keyof typeof USER_ROLE];
 
-function getRole(role:TUserRole){
+function printRole(role:TUserRole){
     switch (role) {
         case USER_ROLE.ADMIN:
             console.log("Admin");
@@ -169,8 +171,8 @@ function getRole(role:TUserRole){
     }
 }
 
-getRole(USER_ROLE.ADMIN) 
-getRole(0)
+printRole(USER_ROLE.ADMIN) 
+printRole(0)
 
 */
 
@@ -209,9 +211,9 @@ const roleFunction:Record<TUserRole,() => void> ={
     // 3:()=>console.log("3 func called"),
 }
 
-function getRole(role:TUserRole){
+function printRole(role:TUserRole){
    roleFunction[role]();
 }
 
-getRole(2)
+printRole(2)
 */
