@@ -63,8 +63,7 @@ printRole("ADMIN")
 
 //coming to part of uninon way
 
-/*
-// @sc-ignore
+/*@sc-ignore
 type role = "Admin" | "User"
 
 const AdminArr:"Admin"[] = [];
